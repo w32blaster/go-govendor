@@ -1,4 +1,4 @@
-FROM Dockerfile
+FROM golang
 
 COPY ashrc /root/.ashrc	
 ENV ENV="/root/.ashrc"
