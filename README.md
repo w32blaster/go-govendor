@@ -9,4 +9,6 @@ It is pretty useful in CI systems that works with Docker conainers. It allows yo
 
 I use ConcourseCI and my logs look like this:
 
-...screenshot here....
+![ConcourseCI Colored messages](https://raw.githubusercontent.com/w32blaster/go-govendor/master/img/screenshot1.jpg)
+
+Can you see these messages printed in green color? I used `printGreenln "message"` for that.
