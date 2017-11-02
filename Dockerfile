@@ -1,8 +1,14 @@
 FROM golang:alpine
 
-COPY ashrc /root/.ashrc	
-ENV ENV="/root/.ashrc"
-
 RUN apk add --update --no-cache git && \
     go get -u -v github.com/kardianos/govendor && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    
+    # add few useful aliases to print colored messages to stdout in non-interactive mode
+    echo -e '#!/bin/sh\n printf "\033[1;32m$* \033[0m"' > /usr/bin/printGreen && \
+    chmod +x /usr/bin/printGreen && \
+
+    echo -e '#!/bin/sh\n printf "\033[1;32m$* \033[0m \n"' > /usr/bin/printGreenln && \
+    chmod +x /usr/bin/printGreenln
+
+
