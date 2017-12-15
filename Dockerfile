@@ -1,6 +1,10 @@
 FROM golang:alpine
 
-RUN apk add --update --no-cache git && \
+
+RUN apk add --update --no-cache git libressl-dev && \
+    apk del openssl && \
+
+    # install govendor
     go get -u -v github.com/kardianos/govendor && \
     rm -rf /var/cache/apk/* && \
     
