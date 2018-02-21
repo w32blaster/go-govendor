@@ -1,7 +1,7 @@
 FROM golang:alpine
 
 
-RUN apk add --update --no-cache git libressl-dev && \
+RUN apk add --update --no-cache git libressl-dev make && \
     apk del openssl && \
 
     # install govendor
